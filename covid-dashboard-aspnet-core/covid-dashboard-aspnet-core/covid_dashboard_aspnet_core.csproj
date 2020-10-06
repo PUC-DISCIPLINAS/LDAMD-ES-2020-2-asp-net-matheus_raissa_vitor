@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <UserSecretsId>aspnet-covid_dashboard_aspnet_core-BC650B24-0459-4A5B-AB04-0180302479EF</UserSecretsId>
+    <AssemblyName>covid_dashboard_aspnet_core</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
