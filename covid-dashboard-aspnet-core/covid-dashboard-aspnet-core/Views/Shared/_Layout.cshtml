@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - covid_dashboard_aspnet_core</title>
+    <title>@ViewData["Title"] - Covid Dashboard</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -26,11 +26,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">covid_dashboard_aspnet_core</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">COVID - DASHBOARD</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    @if (User.Identity.IsAuthenticated) { 
+                        <li><a asp-area="" asp-controller="Countries" asp-action="Index">Países</a></li>
+                        <li><a asp-area="" asp-controller="DataCovids" asp-action="Index">Dados</a></li>
+                    }
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
@@ -44,8 +47,8 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; 2020 - covid_dashboard_aspnet_core</p>
+        <footer class="text-center">
+            <p>&copy; 2020 - COVID DASHBOARD</p>
         </footer>
     </div>
 

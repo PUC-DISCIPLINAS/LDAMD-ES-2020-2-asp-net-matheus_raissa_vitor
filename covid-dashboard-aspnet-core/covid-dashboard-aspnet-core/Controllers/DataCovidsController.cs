@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using covid_dashboard_aspnet_core.Data;
 using covid_dashboard_aspnet_core.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace covid_dashboard_aspnet_core.Controllers
 {
+    [Authorize]
     public class DataCovidsController : Controller
     {
         private readonly ApplicationDbContext _context;

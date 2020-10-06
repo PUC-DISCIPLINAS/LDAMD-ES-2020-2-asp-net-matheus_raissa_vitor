@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using covid_dashboard_aspnet_core.Data;
 using covid_dashboard_aspnet_core.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace covid_dashboard_aspnet_core.Controllers
 {
+    [Authorize]
     public class CountriesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,8 +22,15 @@ namespace covid_dashboard_aspnet_core.Controllers
         }
 
         // GET: Countries
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
+
+            if(!String.IsNullOrEmpty(searchString))
+            {
+                var applicationDbContex = _context.Country.Where(c => c.Name.Contains(searchString));
+                return View(await applicationDbContex.ToListAsync());
+            }
+
             return View(await _context.Country.ToListAsync());
         }
 

@@ -5,14 +5,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using covid_dashboard_aspnet_core.Models;
+using covid_dashboard_aspnet_core.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace covid_dashboard_aspnet_core.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+
+        private readonly ApplicationDbContext _context;
+
+        public HomeController(ApplicationDbContext context)
         {
-            return View();
+            _context = context;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var applicationDbContext = _context.DataCovid.Include(d => d.Country);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         public IActionResult About()
