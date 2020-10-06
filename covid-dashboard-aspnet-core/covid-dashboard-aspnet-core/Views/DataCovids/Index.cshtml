@@ -1,0 +1,53 @@
+﻿@model IEnumerable<covid_dashboard_aspnet_core.Models.DataCovid>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ConfirmedCase)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Death)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recovered)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConfirmedCase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Death)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Recovered)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
