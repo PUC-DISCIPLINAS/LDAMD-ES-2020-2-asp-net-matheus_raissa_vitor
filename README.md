@@ -4,7 +4,37 @@
 
 ### 💻 Sobre o Projeto
 
-O projeto proposto a ser desenvolvido é um sistema pequeno de dashboard (pode ser no formato de tabela), que irá exibir uma tabela de infecção dos países por COVID-19
+O projeto proposto a ser desenvolvido é um sistema pequeno de dashboard (pode ser no formato de tabela), que irá exibir uma tabela de infecção dos países por COVID-19. Utilizando o ASP.NET MVC.
+
+### ⌨️ Instruções para Execução 
+
+- Na tela inicial do Visual Studio, basta selecionar a opção **Abrir um projeto ou uma solução** e dentro da pasta do projeto selecionar **covid_dashboard_aspnet_core.sln**. 
+
+### ⚙️ Estrutura do Sistema
+
+> Model - É a parte da aplicação que implementa a lógica para a camada de dados da aplicação.
+
+- 🛠 Country: Classe responsável por gerenciar os países que serão cadastrados.  
+- 📝 DataCovid: Classe responsável por armazenar os dados: (casos_confirmados, mortes, recuperados).
+- :x: ErrorViewModel: Classe gerada automaticamente com responsabilidade de validar a comunicação e erros entre as camadas de _View_ e _Model_. 
+
+> Controller - É a parte mediadora entre a comunicação entre a _View_ e o _Model_. Recebem requisições HTTP e retornam as informações para o browser.
+
+- 🛠 CountriesController / 📝 DataCovidsController: Responsável por realizar as funcionalidades da aplicação, contendo elas: index, details, create, edit, delete, etc.
+- :office: HomeController: Responsável por renderizar os dados na página inicial referentes ao DataCovid.
+
+> View - É a camada responsável por fazer a renderização da resposta para o usuário. Utilizando o Razor.
+
+- 🛠 Countries / 📝 DataCovids: Responsável pela interface referente as funcionalidades da aplicação. Contendo: Create, Delete, Details, Edit, Index, geradas automaticamente após a criação dos Controllers.
+- :office: Home: Responsável pela interface referente aos dados do DataCovid.
+- :round_pushpin: Shared: Responsável pelo nosso layout padrão. 
+
+
+
+
+
+
+
 
 ### ⚙️ Requisitos
 
