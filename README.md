@@ -29,12 +29,45 @@ O projeto proposto a ser desenvolvido é um sistema pequeno de dashboard (pode s
 - :office: Home: Responsável pela interface referente aos dados do DataCovid.
 - :round_pushpin: Shared: Responsável pelo nosso layout padrão. 
 
+### :pushpin: Operações 
 
+🛠 CountriesController: 
 
+```
+* public CountriesController(ApplicationDbContext context) - responsável pela comunicação com o DataBase.
+* public async Task<IActionResult> Index(string searchString) - vai retornar todas as cidades cadastradas, porém se for passado um parâmetro ele ira filtrar pelo nome do país.
+* public async Task<IActionResult> Details(int? id) - visualizar informações de determinado país.
+* public IActionResult Create() - serve apenas para exibir o formulário de criação.
+* public async Task<IActionResult> Create([Bind("Id,Name")] Country country) - enviando os dados do formulário para criação no banco de dados.
+* public async Task<IActionResult> Edit(int? id) - recebe os dados e exibe o formulário de edição.
+* public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Country country) - envia os dados editados para o banco de dados.
+* public async Task<IActionResult> Delete(int? id) - recebe o id e apaga a cidade selecionada. 
+* public async Task<IActionResult> DeleteConfirmed(int id) - confirmação se realmente deseja apagar. 
+* private bool CountryExists(int id) - validação para verificar se a cidade existe ou não.
+```
 
+📝 DataCovidsController:
 
+```
+* public DataCovidsController(ApplicationDbContext context) - responsável pela comunicação com o DataBase.
+* public async Task<IActionResult> Index() - vai retornar todas as datacovid cadastradas.
+* public async Task<IActionResult> Details(int? id) - visualizar informações de determinada datacovid.
+* public IActionResult Create() - serve apenas para exibir o formulário de criação.
+* public async Task<IActionResult> Create([Bind("Id,ConfirmedCase,Death,Recovered,CountryId")] DataCovid dataCovid) - enviando os dados do formulário para criação no banco de dados. 
+* public async Task<IActionResult> Edit(int? id) - recebe os dados e exibe o formulário de edição.
+* public async Task<IActionResult> Edit(int id, [Bind("Id,ConfirmedCase,Death,Recovered,CountryId")] DataCovid dataCovid) - envia os dados editados para o banco de dados.
+* public async Task<IActionResult> Delete(int? id) - recebe o id e apaga a datacovid selecionada. 
+* public async Task<IActionResult> DeleteConfirmed(int id) - confirmação se realmente deseja apagar.
+* private bool DataCovidExists(int id) - validação para verificar se a datacovid existe ou não.
+```
 
-
+:office: Home: 
+```
+* public HomeController(ApplicationDbContext context) - responsável pela comunicação com o DataBase.
+* public async Task<IActionResult> Index() - vai retornar todas as datacovid cadastradas, incluindo a cidade.
+* public IActionResult About() - retorna uma visualização na navbar.
+* public IActionResult Contact() - retorna uma visualização na navbar.
+```
 
 ### ⚙️ Requisitos
 
