@@ -2,6 +2,9 @@
     <span href="">COVID Dashboard ASP.NET Core 🔗 </span>
 </h1>
 
+[![language_badge](https://img.shields.io/github/languages/top/PUC-ES-LDAMD/asp-net-matheus_raissa)](https://shields.io/)
+[![lastcommit_badge](https://img.shields.io/github/last-commit/PUC-ES-LDAMD/asp-net-matheus_raissa)](https://shields.io/)
+
 ### 💻 Sobre o Projeto
 
 O projeto proposto a ser desenvolvido é um sistema pequeno de dashboard (pode ser no formato de tabela), que irá exibir uma tabela de infecção dos países por COVID-19. Utilizando o ASP.NET MVC.
