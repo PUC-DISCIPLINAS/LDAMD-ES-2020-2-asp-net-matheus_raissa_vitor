@@ -86,6 +86,7 @@ O projeto proposto a ser desenvolvido é um sistema pequeno de dashboard (pode s
 
 * Matheus Santos Rosa Carneiro - [mcarneirobug](https://github.com/mcarneirobug)
 * Raissa Carolina Vilela da Silva - [raissavilela](https://github.com/raissavilela)
+* Vitor Augusto Alves de Jesus - [ovitorj](https://github.com/ovitorj)
 
 ### 📝 Professor responsável
 
